@@ -35,6 +35,12 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
   }
 
+  void _incrementCounter() {
+    setState(() {
+      ++counts[_currentIndex];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     pages = [
@@ -95,6 +101,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: Icon(Icons.add),
+      ), //
     );
   }
 }
